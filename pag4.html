@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa - DiaDaBike</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            const mapOptions = {
+                center: { lat: -23.55052, lng: -46.633308 }, // São Paulo coordinates
+                zoom: 12,
+            };
+            const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Add some markers to the map
+            const locations = [
+                { lat: -23.55052, lng: -46.633308 },
+                { lat: -23.556438, lng: -46.662839 },
+                { lat: -23.564224, lng: -46.65433 },
+                { lat: -23.570413, lng: -46.62529 }
+            ];
+
+            locations.forEach(location => {
+                new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    title: 'Ponto de Bicicleta'
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a href="index.html"><img src="img/logo.png" class="logo_inicial" alt="Logo Inicial"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pag2.html">História</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pag3.html">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="pag4.html">Mapa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pag5.html">Comunidade</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="hr">
+    <hr>
+</div>
+
+<main >
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122897.89230629962!2d-48.01993039585147!3d-15.72153333080595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3d18df9ae275%3A0x738470e469754a24!2zQnJhc8OtbGlhLCBERg!5e0!3m2!1spt-BR!2sbr!4v1717991324904!5m2!1spt-BR!2sbr" width="1000" height="1000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="novo">
+        <h1 class="display-4 text-center">Nossa Rede de Bicicletas Públicas</h1>
+        <p>
+            O mapa acima mostra os pontos de retirada e devolução de bicicletas públicas do DiaDaBike. Esses locais foram estrategicamente posicionados para oferecer conveniência e acessibilidade para todos os usuários. Em cada ponto, você pode encontrar bicicletas disponíveis para uso, permitindo que você se desloque pela cidade de forma sustentável e eficiente. Explore o mapa para encontrar o ponto mais próximo de você!
+        </p>
+    </div>
+</main>
+
+<div class="hr">
+    <hr>
+</div>
+
+<footer class="pe">
+    <p>Sobre nós<br> Carreiras<br> Perguntas frequentes<br> Investidores<br> Investimentos<br> Cartão Turbo Boost<br> Empréstimo</p>
+    <div class="footer-images">
+        <img src="img/logo.png" class="logo_final" alt="Logo Final">
+        <img src="img/apps.png" class="apps" alt="Apps">
+        <img src="img/playstore.png" class="play" alt="Play Store">
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
